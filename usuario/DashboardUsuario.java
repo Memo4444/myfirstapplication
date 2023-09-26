@@ -3,7 +3,10 @@ package com.L20291001.myfirstapplication.usuario;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.EditText;
+import android.widget.Toolbar;
 
 import com.L20291001.myfirstapplication.R;
 import com.L20291001.myfirstapplication.usuario.model.Usuario;
@@ -42,5 +45,15 @@ public class DashboardUsuario extends AppCompatActivity {
         etEmail.setText(userInfo.getEmail());
 
         //getResources().getString(R.string.tvNom) = userInfo.getNombre();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
     }
 }
